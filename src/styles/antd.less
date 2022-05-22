@@ -1,10 +1,26 @@
 .ant-layout {
   height: 100%;
-  color: #fff;
-  &-header {
-    border-bottom: 1px solid #f1f1f1;
+  color: var(--color-text-1);
+  background-color: var(--color-bg-1);
+  .ant-menu-inline,
+  .ant-menu-vertical,
+  .ant-menu-vertical-left {
+    border-right-width: 0;
   }
-  &-header, &-sider {
-    background-color: #fff;
+  &-footer {
+    background-color: var(--color-bg-1);
+  }
+  &-header {
+    border-bottom: 1px solid var(--header-border);
+  }
+  .ant-menu-inline,
+  &-header,
+  &-sider {
+    background-color: var(--page-bg);
+    color: var(--text-color);
+  }
+  .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    color: var(--theme-color);
+    background-color: rgba(255, 255, 255, 0.08);
   }
 }

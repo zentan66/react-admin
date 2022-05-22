@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import type { MenuProps } from 'antd'
 import { Menu as AntdMenu } from 'antd'
 import { menuConfig } from '@/config/menu'
+import { Icons } from '@/components/Icons'
 
 const Menu = () => {
   const [current, setCurrent] = useState('introduce')
@@ -9,10 +10,12 @@ const Menu = () => {
     return {
       label: topMenu.title,
       key: topMenu.key,
+      icon: <Icons name={topMenu.icon} />,
       children: topMenu.subMenu.map((subItem) => {
         return {
           key: subItem.path,
           label: subItem.title,
+          icon: <Icons name={subItem.icon} />,
         }
       }),
     }
@@ -23,6 +26,7 @@ const Menu = () => {
   return (
     <AntdMenu
       mode="inline"
+      className="main-bg-color"
       onClick={onMenuChange}
       defaultOpenKeys={['home']}
       selectedKeys={[current]}

@@ -18,7 +18,7 @@ axiosInstance.interceptors.request.use(
   (error) => Promise.reject(error),
 )
 
-axiosInstance.interceptors.response.use(response => {
+axiosInstance.interceptors.response.use((response) => {
   const { code, data, message } = response.data
   if (code === 200) {
     return data
@@ -44,8 +44,8 @@ const http = (
   return axiosInstance({
     method,
     url,
-    transformResponse: data => data,
-    ...requstBody
+    transformResponse: (data) => data,
+    ...requstBody,
   }).then((res: AxiosResponse) => {
     return res.data
   })

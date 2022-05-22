@@ -5,7 +5,7 @@ export default {
   children: [
     {
       title: '系统介绍',
-      component: Introduce
-    }
-  ]
+      component: Introduce,
+    },
+  ],
 }
